@@ -1,0 +1,12 @@
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\bin\Debug\net8.0\BaseCore.HR.deps.json
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\bin\Debug\net8.0\BaseCore.HR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\bin\Debug\net8.0\BaseCore.HR.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\BaseCore.HR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\BaseCore.HR.AssemblyInfoInputs.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\BaseCore.HR.AssemblyInfo.cs
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\BaseCore.HR.csproj.CoreCompileInputs.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\BaseCore.HR.sourcelink.json
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\BaseCore.HR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\refint\BaseCore.HR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\BaseCore.HR.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\BaseCore.HR\obj\Debug\net8.0\ref\BaseCore.HR.dll
