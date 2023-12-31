@@ -14,3 +14,5 @@ C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.
 C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\refint\HR.Business.dll
 C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.pdb
 C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\ref\HR.Business.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\bin\Debug\net8.0\DataAccessHR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\bin\Debug\net8.0\DataAccessHR.pdb

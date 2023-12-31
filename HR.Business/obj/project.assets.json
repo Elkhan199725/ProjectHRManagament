@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/BaseCore.HR.dll": {}
         }
+      },
+      "DataAccessHR/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BaseCore.HR": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccessHR.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccessHR.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../BaseCore.HR/BaseCore.HR.csproj",
       "msbuildProject": "../BaseCore.HR/BaseCore.HR.csproj"
+    },
+    "DataAccessHR/1.0.0": {
+      "type": "project",
+      "path": "../DataAccessHR/DataAccessHR.csproj",
+      "msbuildProject": "../DataAccessHR/DataAccessHR.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "BaseCore.HR >= 1.0.0"
+      "BaseCore.HR >= 1.0.0",
+      "DataAccessHR >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -61,6 +80,9 @@
           "projectReferences": {
             "C:\\Users\\Elkhan Mammadli\\source\\repos\\ProjectHR\\BaseCore.HR\\BaseCore.HR.csproj": {
               "projectPath": "C:\\Users\\Elkhan Mammadli\\source\\repos\\ProjectHR\\BaseCore.HR\\BaseCore.HR.csproj"
+            },
+            "C:\\Users\\Elkhan Mammadli\\source\\repos\\ProjectHR\\DataAccessHR\\DataAccessHR.csproj": {
+              "projectPath": "C:\\Users\\Elkhan Mammadli\\source\\repos\\ProjectHR\\DataAccessHR\\DataAccessHR.csproj"
             }
           }
         }

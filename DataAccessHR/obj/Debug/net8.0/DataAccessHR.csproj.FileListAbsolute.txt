@@ -1,0 +1,16 @@
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\bin\Debug\net8.0\DataAccessHR.deps.json
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\bin\Debug\net8.0\DataAccessHR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\bin\Debug\net8.0\DataAccessHR.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\bin\Debug\net8.0\BaseCore.HR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\bin\Debug\net8.0\BaseCore.HR.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.csproj.AssemblyReference.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.AssemblyInfoInputs.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.AssemblyInfo.cs
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.csproj.CoreCompileInputs.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.sourcelink.json
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.csproj.CopyComplete
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\refint\DataAccessHR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\DataAccessHR.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\DataAccessHR\obj\Debug\net8.0\ref\DataAccessHR.dll
