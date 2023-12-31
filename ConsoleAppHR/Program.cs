@@ -19,7 +19,7 @@ while (isContinue)
     Console.WriteLine("3)Get all Employees In Company");
     Console.WriteLine("4)Update Company");
     Console.WriteLine("5)Show all Companies");
-    Console.WriteLine("6)Delete Company\n");
+    Console.WriteLine("6)Remove Company\n");
     Console.WriteLine("--------------------------------------");
     Console.ForegroundColor = ConsoleColor.DarkBlue;
     Console.WriteLine("Department: \n");
@@ -28,7 +28,7 @@ while (isContinue)
     Console.WriteLine("8)Relocate Employee to Department");
     Console.WriteLine("9)Update Department");
     Console.WriteLine("10)Get Department Employee ");
-    Console.WriteLine("11)Delete Department \n");
+    Console.WriteLine("11)Remove Department \n");
     Console.WriteLine("--------------------------------------");
     Console.ForegroundColor = ConsoleColor.DarkBlue;
     Console.WriteLine("Employee: \n");
