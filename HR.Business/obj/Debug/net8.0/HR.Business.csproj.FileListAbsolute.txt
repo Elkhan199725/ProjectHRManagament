@@ -1,0 +1,16 @@
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\bin\Debug\net8.0\HR.Business.deps.json
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\bin\Debug\net8.0\HR.Business.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\bin\Debug\net8.0\HR.Business.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\bin\Debug\net8.0\BaseCore.HR.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\bin\Debug\net8.0\BaseCore.HR.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.csproj.AssemblyReference.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.AssemblyInfoInputs.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.AssemblyInfo.cs
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.csproj.CoreCompileInputs.cache
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.sourcelink.json
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.csproj.CopyComplete
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\refint\HR.Business.dll
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\HR.Business.pdb
+C:\Users\Elkhan Mammadli\source\repos\ProjectHR\HR.Business\obj\Debug\net8.0\ref\HR.Business.dll
