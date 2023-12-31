@@ -1,4 +1,5 @@
-﻿using HR.Business.Services;
+﻿using DataAccessHR.Context;
+using HR.Business.Services;
 
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine("Welcome!");
@@ -56,15 +57,15 @@ while (isContinue)
                         Console.WriteLine("Enter Company Name:");
                         string? companyName = Console.ReadLine();
                         Console.WriteLine("Enter Company Description:");
-                        string? companyDesc = Console.ReadLine();
+                        string? companyDescription = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.Green;
-                        companyService.Create(companyName, companyDesc);
+                        companyService.Create(companyName, companyDescription);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -73,21 +74,21 @@ while (isContinue)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine("Companies:\n");
-                        foreach (var company in HRDbContext.Companies)
+                        foreach (var company in HRContextDB.Companies)
                         {
-                            Console.WriteLine(company.Name.ToUpper());
+                            Console.WriteLine(company.Name);
                         }
                         Console.ResetColor();
-                        Console.WriteLine("\n Enter Company Name:");
+                        Console.WriteLine("\n Enter Company Name: \n");
                         string? companyName = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.Green;
                         companyService.GetAllDepartments(companyName);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -95,22 +96,22 @@ while (isContinue)
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                        Console.WriteLine("Companies:\n");
-                        foreach (var company in HRDbContext.Companies)
+                        Console.WriteLine("Companies: \n");
+                        foreach (var company in HRContextDB.Companies)
                         {
                             Console.WriteLine(company.Name.ToUpper());
                         }
                         Console.ResetColor();
-                        Console.WriteLine("\n Enter Company Name:");
+                        Console.WriteLine("\n Enter Company Name: \n");
                         string? companyName = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.Green;
                         companyService.GetAllEmployees(companyName);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -119,9 +120,9 @@ while (isContinue)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Companies:\n");
-                        foreach (var company in HRDbContext.Companies)
+                        foreach (var company in HRContextDB.Companies)
                         {
-                            Console.WriteLine($"{company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"{company.Name} \n");
                         }
                         Console.ResetColor();
 
@@ -135,10 +136,10 @@ while (isContinue)
                         companyService.UpdateCompany(companyName, newCompanyName, newDescription);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -151,22 +152,22 @@ while (isContinue)
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        Console.WriteLine("Companies:\n");
-                        foreach (var company in HRDbContext.Companies)
+                        Console.WriteLine("Companies: \n");
+                        foreach (var company in HRContextDB.Companies)
                         {
-                            Console.WriteLine($"{company.Name.ToUpper()}");
+                            Console.WriteLine($"{company.Name}");
                         }
                         Console.ResetColor();
-                        Console.WriteLine("Enter Company Name:");
+                        Console.WriteLine("Enter Company Name: ");
                         string? companyName = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.Green;
                         companyService.DeleteCompany(companyName);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -179,31 +180,31 @@ while (isContinue)
                         string? departmentDescription = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine("Companies:\n");
-                        foreach (var company in HRDbContext.Companies)
+                        foreach (var company in HRContextDB.Companies)
                         {
-                            Console.WriteLine($"Id: {company.Id}\n Name: {company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"Id: {company.Id}\n Name: {company.Name} \n");
                         }
                         Console.ResetColor();
-                        Console.WriteLine("Enter Company Id:\n");
-                        int companyId = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter Company Id: \n");
+                        int _companyId = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Enter Employee Limit");
-                        int employeeLimit = Convert.ToInt32(Console.ReadLine());
+                        int maxEmployee = Convert.ToInt32(Console.ReadLine());
                         Console.ForegroundColor = ConsoleColor.Green;
-                        departmentService.Create(departmentName, departmentDescription, companyId, employeeLimit);
+                        departmentService.Create(departmentName, departmentDescription, _companyId, maxEmployee);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
-                case (int)ConsoleApp.TransferEmployeeToDepartment:
+                case (int)ConsoleApp.EmployeeRelocation:
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGray;
-                        foreach (var employee in HRDbContext.Employees)
+                        foreach (var employee in HRContextDB.Employees)
                         {
                             Console.WriteLine($"Id:{employee.Id}/Full Name: {employee.Name.ToUpper()} {employee.Surname.ToUpper()} ");
                         }
@@ -211,22 +212,24 @@ while (isContinue)
                         Console.WriteLine("Enter Employee Id:\n");
                         int employeeId = Convert.ToInt32(Console.ReadLine());
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        foreach (var department in HRDbContext.Departments)
+                        foreach (var department in HRContextDB.Departments)
                         {
-                            Console.WriteLine($"Departments:\n Id: {department.Id}\n Name: {department.Name.ToUpper()} \n Company:{department.Company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"Departments:\n Id: {department.Id}\n " +
+                                $"Name: {department.Name.ToUpper()} \n " +
+                                $"Company:{department._company.Name.ToUpper()}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter New Department Id:");
                         int departmentId = Convert.ToInt32(Console.ReadLine());
                         Console.ForegroundColor = ConsoleColor.Green;
-                        departmentService.TransferEmployeeToDepartment(departmentId, employeeId);
+                        departmentService.EmployeeRelocation(departmentId, employeeId);
                         Console.ResetColor();
 
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -236,9 +239,11 @@ while (isContinue)
                         Console.ForegroundColor = ConsoleColor.Blue;
 
                         Console.WriteLine("Departments:\n");
-                        foreach (var department in HRDbContext.Departments)
+                        foreach (var department in HRContextDB.Departments)
                         {
-                            Console.WriteLine($"Id: {department.Id}\n Name: {department.Name.ToUpper()} \n Company:{department.Company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"Id: {department.Id}\n " +
+                                $"Name: {department.Name.ToUpper()} \n " +
+                                $"Company:{department._company.Name.ToUpper()}\n \n");
                         }
                         Console.ResetColor();
 
@@ -254,10 +259,10 @@ while (isContinue)
                         departmentService.UpdateDepartment(newDepartmentName, newDescription, newEmployeeLimit, departmentId);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -265,9 +270,12 @@ while (isContinue)
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        foreach (var department in HRDbContext.Departments)
+                        foreach (var department in HRContextDB.Departments)
                         {
-                            Console.WriteLine($"Departments:\n Id: {department.Id}\n Name: {department.Name.ToUpper()}  \n Company: {department.Company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"Departments:\n " +
+                                $"Id: {department.Id}\n " +
+                                $"Name: {department.Name.ToUpper()}  \n " +
+                                $"Company: {department._company.Name.ToUpper()}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Department Id:");
@@ -276,10 +284,10 @@ while (isContinue)
                         departmentService.GetDepartmentEmployees(departmentId);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -287,9 +295,12 @@ while (isContinue)
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        foreach (var department in HRDbContext.Departments)
+                        foreach (var department in HRContextDB.Departments)
                         {
-                            Console.WriteLine($"Departments:\n Id: {department.Id}\n Name: {department.Name.ToUpper()}  \n Company: {department.Company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"Departments:\n " +
+                                $"Id: {department.Id}\n " +
+                                $"Name: {department.Name.ToUpper()}  \n " +
+                                $"Company: {department._company.Name.ToUpper()}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Department Id:");
@@ -298,10 +309,10 @@ while (isContinue)
                         departmentService.DeleteDepartment(departmentId);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -313,37 +324,42 @@ while (isContinue)
                         string? employeeName = Console.ReadLine();
                         Console.WriteLine("Enter Employee Surname:");
                         string? employeeSurname = Console.ReadLine();
-                        Console.WriteLine("Enter Employee Salary:");
-                        int employeeSalary = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter Employee wage:");
+                        int employeeWage = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Enter Employee Position:");
-                        string? employeePosition = Console.ReadLine();
+                        string? employeeCommission = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        foreach (var department in HRDbContext.Departments)
+                        foreach (var department in HRContextDB.Departments)
                         {
-                            Console.WriteLine($"Departments:\n Id: {department.Id}\n Name: {department.Name.ToUpper()}  \n Company: {department.Company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"Departments:\n " +
+                                $"Id: {department.Id}\n " +
+                                $"Name: {department.Name.ToUpper()}  \n " +
+                                $"Company: {department._company.Name.ToUpper()}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Department Id:\n");
                         int employeeDepartmentId = Convert.ToInt32(Console.ReadLine());
                         Console.ForegroundColor = ConsoleColor.Green;
-                        employeeService.Create(employeeName, employeeSurname, employeeSalary, employeeDepartmentId, employeePosition);
+                        employeeService.Create(employeeName, employeeSurname, employeeWage, employeeDepartmentId, employeeCommission);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
-                case (int)ConsoleApp.UpdateSalary:
+                case (int)ConsoleApp.UpdateWage:
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine($"Departments:");
-                        foreach (var department in HRDbContext.Departments)
+                        foreach (var department in HRContextDB.Departments)
                         {
-                            Console.WriteLine($"Id: {department.Id}\n Name: {department.Name.ToUpper()}  \n Company: {department.Company.Name.ToUpper()}\n \n");
+                            Console.WriteLine($"Id: {department.Id}\n " +
+                                $"Name: {department.Name.ToUpper()}  \n " +
+                                $"Company: {department._company.Name.ToUpper()}\n \n");
                         }
                         Console.ResetColor();
 
