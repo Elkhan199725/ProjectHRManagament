@@ -1,0 +1,63 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ConsoleAppHR/1.0.0": {
+        "dependencies": {
+          "HR.Business": "1.0.0"
+        },
+        "runtime": {
+          "ConsoleAppHR.dll": {}
+        }
+      },
+      "BaseCore.HR/1.0.0": {
+        "runtime": {
+          "BaseCore.HR.dll": {}
+        }
+      },
+      "DataAccessHR/1.0.0": {
+        "dependencies": {
+          "BaseCore.HR": "1.0.0"
+        },
+        "runtime": {
+          "DataAccessHR.dll": {}
+        }
+      },
+      "HR.Business/1.0.0": {
+        "dependencies": {
+          "BaseCore.HR": "1.0.0",
+          "DataAccessHR": "1.0.0"
+        },
+        "runtime": {
+          "HR.Business.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleAppHR/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BaseCore.HR/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataAccessHR/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HR.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

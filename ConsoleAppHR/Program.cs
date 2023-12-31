@@ -1,7 +1,7 @@
 ﻿using DataAccessHR.Context;
 using HR.Business.Services;
 
-Console.ForegroundColor = ConsoleColor.Cyan;
+Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("Welcome!");
 Console.ResetColor();
 bool isContinue = true;
@@ -11,7 +11,7 @@ while (isContinue)
     DepartmentService departmentService = new();
     EmployeeService employeeService = new();
     Console.WriteLine("--------------------------------------");
-    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.ForegroundColor = ConsoleColor.DarkBlue;
     Console.WriteLine("Company: \n");
     Console.ResetColor();
     Console.WriteLine("1)Create Company");
@@ -21,7 +21,7 @@ while (isContinue)
     Console.WriteLine("5)Show all Companies");
     Console.WriteLine("6)Delete Company\n");
     Console.WriteLine("--------------------------------------");
-    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.ForegroundColor = ConsoleColor.DarkBlue;
     Console.WriteLine("Department: \n");
     Console.ResetColor();
     Console.WriteLine("7)Create Department");
@@ -30,7 +30,7 @@ while (isContinue)
     Console.WriteLine("10)Get Department Employee ");
     Console.WriteLine("11)Delete Department \n");
     Console.WriteLine("--------------------------------------");
-    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.ForegroundColor = ConsoleColor.DarkBlue;
     Console.WriteLine("Employee: \n");
     Console.ResetColor();
     Console.WriteLine("12)Create Employee");
@@ -39,8 +39,8 @@ while (isContinue)
     Console.WriteLine("15)Remove Employee");
     Console.WriteLine("--------------------------------------");
     Console.WriteLine("0)Exit");
-    Console.ForegroundColor = ConsoleColor.DarkCyan;
-    Console.WriteLine("\n Choose an option(as number) :)\n");
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.WriteLine("\n Select one of the options >>\n");
     Console.ResetColor();
     string? option = Console.ReadLine();
     int intOption;
@@ -372,42 +372,42 @@ while (isContinue)
                         Console.WriteLine("Enter Employee Id:");
                         int employeeId = Convert.ToInt32(Console.ReadLine());
                         Console.ResetColor();
-                        Console.WriteLine("Enter New Salary:");
-                        int newSalary = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter New Wage:");
+                        int newWage = Convert.ToInt32(Console.ReadLine());
                         Console.ForegroundColor = ConsoleColor.Green;
-                        employeeService.UpdateSalary(newSalary, employeeId, departmentId);
+                        employeeService.UpdateWage(newWage, employeeId, departmentId);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
-                case (int)ConsoleApp.UpdatePosition:
+                case (int)ConsoleApp.UpdateCommission:
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine("Employees:\n");
-                        foreach (var employee in HRDbContext.Employees)
+                        foreach (var employee in HRContextDB.Employees)
                         {
                             Console.WriteLine($"Id:{employee.Id}/ Full Name:{employee.Name.ToUpper()} {employee.Surname.ToUpper()}\n" +
-                                $"Company:{employee.Company.Name.ToUpper()}/ Department:{employee.Department.Name.ToUpper()}/ Position:{employee.Position.ToUpper()}\n\n");
+                                $"Company:{employee.Company.Name.ToUpper()}/ Department:{employee._department.Name.ToUpper()}/ Commission:{employee.Commission.ToUpper()}\n\n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Employee Id:");
                         int employeeId = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Enter New Position:");
-                        string? newPosition = Console.ReadLine();
+                        Console.WriteLine("Enter new Commission:");
+                        string? newCommission = Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.Green;
-                        employeeService.UpdatePosition(employeeId, newPosition);
+                        employeeService.UpdateCommission(employeeId, newCommission);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
@@ -415,9 +415,10 @@ while (isContinue)
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        foreach (var employee in HRDbContext.Employees)
+                        foreach (var employee in HRContextDB.Employees)
                         {
-                            Console.WriteLine($"Id:{employee.Id}/Full Name: {employee.Name} {employee.Surname}\nPosition: {employee.Position}\n \n");
+                            Console.WriteLine($"Id:{employee.Id}/Full Name: {employee.Name} {employee.Surname}\n" +
+                                              $"Position: {employee.Commission}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Employee Id:");
@@ -426,10 +427,10 @@ while (isContinue)
                         employeeService.DeleteEmployee(employeeId);
                         Console.ResetColor();
                     }
-                    catch (Exception ex)
+                    catch (Exception exception)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                         Console.ResetColor();
                     }
                     break;
