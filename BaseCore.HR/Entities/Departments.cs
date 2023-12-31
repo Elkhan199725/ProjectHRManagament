@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BaseCore.HR.Entities;
 
-public class Department : InterfaceID
+public class Departments : InterfaceID
 {
     public int Id { get; }
     public string Name { get; set; }
@@ -19,7 +19,7 @@ public class Department : InterfaceID
     static int id;
     public int CurrentEmployeeManpower;
 
-    public Department ( string name, string? description, int maxEmployeeLimitation,  int companyId)
+    public Departments ( string name, string? description, int maxEmployeeLimitation,  int companyId)
     {
         Id = id;
         Name = name;

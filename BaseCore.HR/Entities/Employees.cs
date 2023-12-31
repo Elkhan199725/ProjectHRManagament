@@ -12,7 +12,7 @@ public class Employees : InterfaceID
     public int Id { get; }
     public string Name { get; set; }
     public string Surname { get; set; }
-    public Department? _department { get; set; }
+    public Departments? _department { get; set; }
     public int _departmentId { get; set; }
     public Company? Company { get; set; }
     public int Wage { get; set; }
