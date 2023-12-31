@@ -324,7 +324,7 @@ while (isContinue)
                         string? employeeName = Console.ReadLine();
                         Console.WriteLine("Enter Employee Surname:");
                         string? employeeSurname = Console.ReadLine();
-                        Console.WriteLine("Enter Employee wage:");
+                        Console.WriteLine("Enter Employee Wage:");
                         int employeeWage = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Enter Employee Position:");
                         string? employeeCommission = Console.ReadLine();
