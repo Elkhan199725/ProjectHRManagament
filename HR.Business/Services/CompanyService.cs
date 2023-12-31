@@ -80,7 +80,7 @@ public class CompanyService : ICompanyService
 
     public void GetAllEmployees(string? companyName)
     {
-        int counter = 0;
+        int counter = 0; // it is acting like boolean here if it increases then it will show personnel
         if (String.IsNullOrEmpty(companyName))
             throw new ArgumentNullException();
         Company? dbCompany =
