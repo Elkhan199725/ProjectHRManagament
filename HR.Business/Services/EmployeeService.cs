@@ -37,7 +37,7 @@ public class EmployeeService : IEmployeeService
         if (dbDepartment is null)
             throw new NotFoundException($"Department cannot be found");
         if (dbDepartment.CurrentEmployeeManpower == dbDepartment.MaxEmployeeLimitation)
-            throw new AlreadyFullException($"{dbDepartment.Name.ToUpper()} Department is already full");
+            throw new AlreadyFullException($"{dbDepartment.Name} Department is already full");
         Employees employee = new Employees(employeeName, employeeSurname, departmentId, employeeWage, commission);
         employee._department = dbDepartment;
         employee.Company = dbDepartment._company;

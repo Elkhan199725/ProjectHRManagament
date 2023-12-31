@@ -31,13 +31,13 @@ public class DepartmentService : IDepartmentService
         if (dbCompany is null)
             throw new NotFoundException($"Company cannot be found");
         if (dbDepartment is not null && dbDepartment._companyId == dbCompany.Id)
-            throw new AlreadyExistException($"{dbDepartment.Name.ToUpper()} Department is already exist");
+            throw new AlreadyExistException($"{dbDepartment.Name} Department is already exist");
         if (maxEmployeeLimitation < 4)
-            throw new MinRequirementException($"The {departmentName.ToUpper()} department should have at least 4 employees ");
+            throw new MinRequirementException($"The {departmentName} department should have at least 4 employees ");
         Departments department = new(departmentName, departmentDescription, companyId, maxEmployeeLimitation);
         department._company = dbCompany;
         HRContextDB.Departments.Add(department);
-        Console.WriteLine($"The new department- {department.Name.ToUpper()} has been successfully created.\n");
+        Console.WriteLine($"The new department- {department.Name} has been successfully created.\n");
 
     }
 
@@ -116,11 +116,11 @@ public class DepartmentService : IDepartmentService
             dbEmployee._department = dbDepartment;
             dbEmployee._departmentId = dbDepartment.Id;
             dbDepartment.CurrentEmployeeManpower++;
-            Console.WriteLine($"The new employee - {dbEmployee.Name.ToUpper()} has been successfully added \n");
+            Console.WriteLine($"The new employee - {dbEmployee.Name} has been successfully added \n");
         }
         else if (dbEmployee._departmentId == dbDepartment.Id && employeeDepartment._company.Name == dbDepartment._company.Name)
         {
-            throw new AlreadyExistException($"Employee {dbEmployee.Name.ToUpper()} is already in {dbDepartment.Name.ToUpper()} Department");
+            throw new AlreadyExistException($"Employee {dbEmployee.Name} is already in {dbDepartment.Name} Department");
         }
         else throw new NotFoundException($"Employee cannot be found in company");
     }
@@ -138,7 +138,7 @@ public class DepartmentService : IDepartmentService
         Departments? dbNewDepartment =
           HRContextDB.Departments.Find(d => d.Name.ToLower() == newDepartmentName.ToLower());
         if (dbNewDepartment is not null && dbNewDepartment._company == dbDepartment._company)
-            throw new AlreadyExistException($"{newDepartmentName.ToUpper()} department is already exist");
+            throw new AlreadyExistException($"{newDepartmentName} department is already exist");
         if (newEmployeeLimit < 4 || newEmployeeLimit < dbDepartment.CurrentEmployeeManpower)
             throw new MinRequirementException($"Employee count cannot be less than 3 or current employee count");
         dbDepartment.Name = newDepartmentName;

@@ -87,7 +87,7 @@ public class CompanyService : ICompanyService
             HRContextDB.Companies.Find(c => c.Name.ToLower() == companyName.ToLower());
         if (dbCompany is not null)
         {
-            Console.WriteLine($"Employees in {companyName.ToUpper()} Company:\n");
+            Console.WriteLine($"Employees in {companyName} Company:\n");
             foreach (var employee in HRContextDB.Employees)
             {
                 if (employee.Company.Name.ToLower() == dbCompany.Name.ToLower())
@@ -99,14 +99,14 @@ public class CompanyService : ICompanyService
             }
             if (counter == 0) Console.WriteLine($"{companyName} company does not have any department");
         }
-        else throw new NotFoundException($"{companyName.ToUpper()} Company cannot be found");
+        else throw new NotFoundException($"{companyName} Company cannot be found");
     }
 
     public void ShowAllCompanies()
     {
         foreach (var company in HRContextDB.Companies)
         {
-            Console.WriteLine($"{company.Id}) {company.Name.ToUpper()}");
+            Console.WriteLine($"{company.Id}) {company.Name}");
         }
     }
 
@@ -123,9 +123,9 @@ public class CompanyService : ICompanyService
         Company? dbNewCompany =
             HRContextDB.Companies.Find(c => c.Name.ToLower() == newCompanyName.ToLower());
         if (dbNewCompany != null)
-            throw new AlreadyExistException($"{newCompanyName.ToUpper()} Company is already exist");
+            throw new AlreadyExistException($"{newCompanyName} Company is already exist");
         dbCompany.Name = newCompanyName;
         dbCompany.Description = newDescription;
-        Console.WriteLine($"{newCompanyName.ToUpper()} Company has been successfully updated");
+        Console.WriteLine($"{newCompanyName} Company has been successfully updated");
     }
 }

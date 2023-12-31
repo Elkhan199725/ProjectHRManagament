@@ -99,7 +99,7 @@ while (isContinue)
                         Console.WriteLine("Companies: \n");
                         foreach (var company in HRContextDB.Companies)
                         {
-                            Console.WriteLine(company.Name.ToUpper());
+                            Console.WriteLine(company.Name);
                         }
                         Console.ResetColor();
                         Console.WriteLine("\n Enter Company Name: \n");
@@ -206,7 +206,7 @@ while (isContinue)
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         foreach (var employee in HRContextDB.Employees)
                         {
-                            Console.WriteLine($"Id:{employee.Id}/Full Name: {employee.Name.ToUpper()} {employee.Surname.ToUpper()} ");
+                            Console.WriteLine($"Id:{employee.Id}/Full Name: {employee.Name } {employee.Surname} ");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Employee Id:\n");
@@ -215,8 +215,8 @@ while (isContinue)
                         foreach (var department in HRContextDB.Departments)
                         {
                             Console.WriteLine($"Departments:\n Id: {department.Id}\n " +
-                                $"Name: {department.Name.ToUpper()} \n " +
-                                $"Company:{department._company.Name.ToUpper()}\n \n");
+                                $"Name: {department.Name} \n " +
+                                $"Company:{department._company.Name}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter New Department Id:");
@@ -242,8 +242,8 @@ while (isContinue)
                         foreach (var department in HRContextDB.Departments)
                         {
                             Console.WriteLine($"Id: {department.Id}\n " +
-                                $"Name: {department.Name.ToUpper()} \n " +
-                                $"Company:{department._company.Name.ToUpper()}\n \n");
+                                $"Name: {department.Name} \n " +
+                                $"Company:{department._company.Name}\n \n");
                         }
                         Console.ResetColor();
 
@@ -274,8 +274,8 @@ while (isContinue)
                         {
                             Console.WriteLine($"Departments:\n " +
                                 $"Id: {department.Id}\n " +
-                                $"Name: {department.Name.ToUpper()}  \n " +
-                                $"Company: {department._company.Name.ToUpper()}\n \n");
+                                $"Name: {department.Name}  \n " +
+                                $"Company: {department._company.Name}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Department Id:");
@@ -299,8 +299,8 @@ while (isContinue)
                         {
                             Console.WriteLine($"Departments:\n " +
                                 $"Id: {department.Id}\n " +
-                                $"Name: {department.Name.ToUpper()}  \n " +
-                                $"Company: {department._company.Name.ToUpper()}\n \n");
+                                $"Name: {department.Name}  \n " +
+                                $"Company: {department._company.Name}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Department Id:");
@@ -333,8 +333,8 @@ while (isContinue)
                         {
                             Console.WriteLine($"Departments:\n " +
                                 $"Id: {department.Id}\n " +
-                                $"Name: {department.Name.ToUpper()}  \n " +
-                                $"Company: {department._company.Name.ToUpper()}\n \n");
+                                $"Name: {department.Name}  \n " +
+                                $"Company: {department._company.Name}\n \n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Department Id:\n");
@@ -358,8 +358,8 @@ while (isContinue)
                         foreach (var department in HRContextDB.Departments)
                         {
                             Console.WriteLine($"Id: {department.Id}\n " +
-                                $"Name: {department.Name.ToUpper()}  \n " +
-                                $"Company: {department._company.Name.ToUpper()}\n \n");
+                                $"Name: {department.Name}  \n " +
+                                $"Company: {department._company.Name}\n \n");
                         }
                         Console.ResetColor();
 
@@ -392,8 +392,8 @@ while (isContinue)
                         Console.WriteLine("Employees:\n");
                         foreach (var employee in HRContextDB.Employees)
                         {
-                            Console.WriteLine($"Id:{employee.Id}/ Full Name:{employee.Name.ToUpper()} {employee.Surname.ToUpper()}\n" +
-                                $"Company:{employee.Company.Name.ToUpper()}/ Department:{employee._department.Name.ToUpper()}/ Commission:{employee.Commission.ToUpper()}\n\n");
+                            Console.WriteLine($"Id:{employee.Id}/ Full Name:{employee.Name} {employee.Surname}\n" +
+                                $"Company:{employee.Company.Name}/ Department:{employee._department.Name}/ Commission:{employee.Commission}\n\n");
                         }
                         Console.ResetColor();
                         Console.WriteLine("Enter Employee Id:");
@@ -443,14 +443,14 @@ while (isContinue)
         else
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Please enter correct option number");
+            Console.WriteLine("Enter correct option number!");
             Console.ResetColor();
         }
     }
     else
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Please enter correct format\n");
+        Console.WriteLine("Enter correct format! \n");
         Console.ResetColor();
     }
 }
